@@ -1,1 +1,108 @@
 
+* {
+    box-sizing: border-box;
+}
+
+/* Centers the entire padded area in the middle of the page */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    line-height: 1.6;
+}
+
+/* Top Layout: Title + Short Bio (Left), Image (Top Right), Navbar (Below Both) */
+.store-card {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    column-gap: 30px;
+    align-items: start;
+}
+
+/* Allows title, short bio, and navbar to sit in their exact grid positions */
+.store-card .about-section {
+    display: contents;
+}
+
+/* Title (Top Left) */
+.store-card h1 {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0 0 10px 0;
+}
+
+/* Short Bio (Below Title on Left) */
+.store-card .quote {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0 0 8px 0;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.store-card p:not(.quote) {
+    grid-column: 1;
+    grid-row: 3;
+    margin: 0 0 20px 0;
+}
+
+/* Image (Top Right) */
+.image {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    justify-self: end;
+}
+
+.image img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Horizontal Navbar (Below Short Bio & Image) */
+.navbar {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    display: flex;
+    justify-content: center;
+    gap: 65px;
+    margin-top: 20px;
+    margin-bottom: 28px;
+    padding: 12px 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Sections Below Navbar (About, Contact, Fun Fact) */
+body > h2 {
+    margin: 0 0 16px 0;
+}
+
+section.about-section,
+.contact-section,
+.fun-fact {
+    margin-bottom: 28px;
+}
+
+section h2 {
+    margin: 0 0 10px 0;
+}
+
+section p {
+    margin: 6px 0;
+}
+
+.fun-fact ul {
+    margin: 0;
+    padding-left: 20px;
+}
